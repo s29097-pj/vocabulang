@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulang - nauka słówek</title>
+    <link rel="stylesheet" href="css/styles.css">  <!-- link do pliku css -->
+</head>
+<body>
+<div class="container">
+    <h3><label for="word-set">Wybierz zestaw słówek:</label></h3>
+    <select id="word-set">
+        <option value="words-1.json">1 - Advanced-Adjectives</option>
+        <option value="words-2.json">2 - Money Idioms</option>
+    </select>
+    <!-- Reszta formularza, np. dla quizu -->
+    <div id="quiz">
+        <p id="polish-word"></p>
+        <label for="synonym-answer"></label><input type="text" id="synonym-answer" placeholder="Wpisz synonim angielski" onkeydown="checkEnter(event)">
+        <button onclick="checkAnswer()">Sprawdź</button>
+        <p class="feedback" id="feedback"></p>
+        <p class="feedback" id="hint"></p>
+        <div id="options"></div> <!-- Dodany kontener na opcje -->
+    </div>
+    <div id="score">
+        <p id="correct-count">Poprawne odpowiedzi: 0</p>
+        <p id="incorrect-count">Złe odpowiedzi: 0</p>
+    </div>
+    <!-- Przycisk powtórzenia błędów -->
+    <button id="repeat-btn" onclick="repeatMistakes()" style="display:none;">Powtórz błędne odpowiedzi</button>
+    <button onclick="endQuiz()" id="end-btn">Zakończ Quiz</button>
+</div>
+<script src="js/script.js"></script> <!-- link do pliku JS -->
+</body>
+</html>
